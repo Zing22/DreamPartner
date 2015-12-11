@@ -9,6 +9,7 @@ from config import basedir
 
 app = Flask(__name__)
 app.config.from_object('config')
+app.config["APPLICATION_ROOT"] = 'apps'
 db = SQLAlchemy(app)
 
 lm = LoginManager()
@@ -17,7 +18,7 @@ lm.login_view = 'login'
 oid = OpenID(app, os.path.join(basedir, 'tmp'))
 
 
-from apps import views, models
+from apps import views, models, baseview
 from apps.models import User
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -27,14 +28,7 @@ text_factory = str
 def load_user(id):
     return User.query.get(int(id))
 
-@app.errorhandler(404)
-def page_not_found(e):
-    return render_template('404.html',title="404"), 404
-
-
-@app.route('/')
-def index(e):
-	return render_template('index.html',title="Apps Index")
-
 from apps.views import dreamp
+from apps.views import sp
 app.register_blueprint(dreamp.mod)
+app.register_blueprint(sp.mod)

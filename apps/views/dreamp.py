@@ -7,7 +7,8 @@ from apps import db, lm
 from apps.models import User
 from apps.libs.dreamp.dreamp_logic import *
 
-mod = Blueprint('dreamp', __name__, url_prefix='/dreamp')
+# mod = Blueprint('dreamp', __name__, url_prefix='/dreamp')
+mod = Blueprint('dreamp', __name__, url_prefix='/apps/dreamp')
 
 @mod.route('/')
 @mod.route('/index')
