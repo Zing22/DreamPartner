@@ -237,6 +237,8 @@ jsPlumb.ready(function() {
                     return false;
                 }
             }
+        } else {
+            name = "Root";
         }
         name = (name)?name:iden;
         a = (a)?a:"xxxx - xxxx";
@@ -620,6 +622,8 @@ jsPlumb.ready(function() {
         $("#container").animate({
             "margin-left": "0px",
         },260);
+        $("#help-text").fadeOut('fast');
+        $("#help-conn").fadeOut('fast');
     });
 
     $("#open-btn").click(function(){
@@ -747,6 +751,20 @@ jsPlumb.ready(function() {
     });
 
     ////// New functions end ////////////
+
+    ////// help text begin ////////////
+
+    $("#show-help-btn").click(function(event) {
+        $("#help-conn").fadeOut(200);
+        $("#help-text").fadeIn(400);
+    });
+
+    $("#detail-btn").click(function(event) {
+        $("#help-text").fadeOut(200);
+        $("#help-conn").fadeIn(400);
+    });
+
+    ////// help text end ////////////
     bgimg = parseInt(Math.random()*100)%imgMax;
     newBg(bgimg);
     setTimeout(function() {
