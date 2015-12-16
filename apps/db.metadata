@@ -1,0 +1,62 @@
+Table User 用户总表，保存用户的基本信息
+Uid(key) 用户标识码，唯一、用作索引
+nickname 昵称，显示在各个界面
+Userdescription 自我简介，显示用
+email 邮箱（用户名），只用于登录
+password(md5) 密码（的md5值）
+Exp 个人总经验值
+
+Table Group 群组总表，保存群组的基本信息
+Gid(key) 群组标识码，唯一且用作索引
+groupname 群组名，可变更，用于显示
+Groupdescription 群组描述，用于显示
+managerid 管理员uid，可转让
+
+Table Task 任务总表，保存任务相关的所有信息
+Tid(key) 任务编号
+Gid 任务所属群组编号
+Date 任务提出日期
+Uidowner 任务提出人用户编号
+Uidexer 任务执行人用户编号
+Point 任务悬赏积分
+Status 任务完成状态
+Tasktitle 任务标题
+Taskdescription 任务详细描述
+
+Table GroupUser 用户与群组关系表
+Fid(key) 主键
+Uid 用户编号
+Gid 该用户加入了哪个群组
+
+Table GroupUserPoint 群组用户积分表，用于保存某个群组内各个用户的具体信息
+fid(key) 仅用作主键的标识码，无特定意义
+Uid 用户编号
+Gid 标识该条记录所记录的是该用户在哪一群组内的信息
+magicpoint 当日在该群组内可用于发布任务时悬赏的分数
+earnpoint 累计完成任务后得到的奖赏分数
+
+Table GroupItems 群组道具表，用于保存所有群组内已定义的所有道具
+Tid(key) 道具标识码
+Gid 该道具属于哪个群组
+Cost 购买道具将花费的分数
+Itemname 道具名称，用于显示
+Itemdescription 道具描述，用于显示
+
+Table GroupUserItems 群组用户已购道具表，用于保存所有用户在所有群组里都购买了什么道具
+Fid(key) 记录编号，无特定意义
+Uid 用户编号
+Tid 拥有道具编号
+
+Table GroupInforms 群组公告表，用于保存群组内发布的公告
+Iid(key) 公告编号
+Gid 公告所属的群组
+Title 公告标题
+Content 公告内容
+Time 公告发布时间
+
+Table GroupComments 群组留言板表，用于保存群组内发布的留言
+Cid(key) 留言编号
+Gid 留言所属的群组编号
+Uid 发布留言的用户的编号
+Content 留言内容
+Time 留言发布时间
