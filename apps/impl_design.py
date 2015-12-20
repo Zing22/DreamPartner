@@ -138,31 +138,6 @@ def setearnpoint(gid, uid, newearnpoint) :
 	return true | false;
 
 #chart 6
-def createItem(gid) :
-	return tid; -> # Need or not ?
-
-def deleteItem(tid) :
-	return true | false; -> # Need or not ?
-
-def getCost(gid, tid) :
-	return Cost;
-
-def setCost(gid, tid, newCost) :
-	return true | false;
-
-def getItemname(gid, tid) :
-	return Itemname;
-
-def setItemname(gid, tid, newItemname) :
-	return true | false;
-
-def getItemdescription(gid, tid) :
-	return Itemdescription;
-
-def setItemdescription(gid, tid, newItemdescription) :
-	return true | false;
-
-#chart 7
 def createItem(uid, tid) :
 	return fid; -> # Need or not ?
 
@@ -190,7 +165,7 @@ def setItemdescription(gid, tid, newItemdescription) :
 def getTimes(gid) :
 	return items;
 
-#chart 8
+#chart 7
 def createUserItems(gid, uid, tid) :
 	return fid;
 
@@ -203,7 +178,7 @@ def getUserItens(gid, uid) :
 #def getUserItems(gid, uid, tid) :
 #	return fid; -> first appear -> need or not ?
 
-# chart 9
+# chart 8
 def createGroupInforms(gid) :
 	return iid;
 
@@ -228,7 +203,7 @@ def getInforms(gid) :
 def getFirstInforms(gid) :
 	return Iid;
 
-#chart 10
+#chart 9
 def createGroupComments(gid, uid) :
 	return cid;  # initialization time
 
