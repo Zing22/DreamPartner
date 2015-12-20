@@ -5,6 +5,7 @@ from apps import db
 LOWTEXTLENGTH = 64;
 MAXTEXTLENGTH = 256;
 
+# chart1
 class user(db.Model):
 	__tablename__ = "user"
 	uid = db.Column(db.Integer, primary_key = True)
@@ -20,6 +21,7 @@ class user(db.Model):
 		self.password = password
 		self.exp = 0
 
+# chart2
 class group(db.Model):
 	__tablename__ = "group"
 	gid = db.Column(db.Integer, primary_key = True)
@@ -31,6 +33,7 @@ class group(db.Model):
 		self.groupDescription = groupDescription
 		self.managerUid = managerUid
 
+# char3
 class task(db.Model):
 	__tablename__ = "task"
 	tid = db.Column(db.Integer, primary_key = True)
@@ -52,6 +55,7 @@ class task(db.Model):
 		self.taskTitle = taskTitle
 		self.taskDescription = taskDescription
 
+# char4
 class groupUser(db.Model):
 	__tablename__ = "groupUser"
 	fid = db.Column(db.Integer, primary_key = True)
@@ -61,6 +65,7 @@ class groupUser(db.Model):
 		self.uid = uid
 		self.gid = gid
 
+# char5
 class groupItems(db.Model):
 	__tablename__ = "groupItems"
 	tid = db.Column(db.Integer, primary_key = True)
@@ -73,7 +78,8 @@ class groupItems(db.Model):
 		self.cost = cost
 		self.itemName = itemName
 		self.itemDescription = itemDescription
-	
+
+# chart5
 class groupUserItems(db.Model):
 	__tablename__ = "groupUserItems"
 	fid = db.Column(db.Integer, primary_key = True)
@@ -82,7 +88,8 @@ class groupUserItems(db.Model):
 	def __init__(self, uid, tid):
 		self.uid = uid
 		self.tid = tid
-	
+
+# chart6
 class groupInforms(db.Model):
 	__tablename__ = "groupInforms"
 	iid = db.Column(db.Integer, primary_key = True)
@@ -94,6 +101,7 @@ class groupInforms(db.Model):
 		self.title = title
 		self.content = content
 
+# chart7
 class groupComments(db.Model):
 	__tablename__ = "groupComments"
 	cid = db.Column(db.Integer, primary_key = True)
