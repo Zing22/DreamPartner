@@ -33,11 +33,7 @@ class group(db.Model):
 		self.groupDescription = groupDescription
 		self.managerUid = managerUid
 
-<<<<<<< HEAD
 # chart3
-=======
-# char3
->>>>>>> 0895ba72d82b30d704b904b486aa478b1faf603e
 class task(db.Model):
 	__tablename__ = "task"
 	tid = db.Column(db.Integer, primary_key = True)
@@ -59,11 +55,7 @@ class task(db.Model):
 		self.taskTitle = taskTitle
 		self.taskDescription = taskDescription
 
-<<<<<<< HEAD
 # chart4
-=======
-# char4
->>>>>>> 0895ba72d82b30d704b904b486aa478b1faf603e
 class groupUser(db.Model):
 	__tablename__ = "groupUser"
 	fid = db.Column(db.Integer, primary_key = True)
@@ -73,7 +65,6 @@ class groupUser(db.Model):
 		self.uid = uid
 		self.gid = gid
 
-<<<<<<< HEAD
 # chart5
 class groupUserPoint(db.Model):
 	__tablename__ = "groupUser"
@@ -89,9 +80,6 @@ class groupUserPoint(db.Model):
 		self.earnPoint = 0 
 
 # chart6
-=======
-# char5
->>>>>>> 0895ba72d82b30d704b904b486aa478b1faf603e
 class groupItems(db.Model):
 	__tablename__ = "groupItems"
 	tid = db.Column(db.Integer, primary_key = True)
@@ -105,11 +93,7 @@ class groupItems(db.Model):
 		self.itemName = itemName
 		self.itemDescription = itemDescription
 
-<<<<<<< HEAD
 # chart7	
-=======
-# chart5
->>>>>>> 0895ba72d82b30d704b904b486aa478b1faf603e
 class groupUserItems(db.Model):
 	__tablename__ = "groupUserItems"
 	fid = db.Column(db.Integer, primary_key = True)
@@ -119,11 +103,7 @@ class groupUserItems(db.Model):
 		self.uid = uid
 		self.tid = tid
 
-<<<<<<< HEAD
 # chart8	
-=======
-# chart6
->>>>>>> 0895ba72d82b30d704b904b486aa478b1faf603e
 class groupInforms(db.Model):
 	__tablename__ = "groupInforms"
 	iid = db.Column(db.Integer, primary_key = True)
@@ -135,11 +115,7 @@ class groupInforms(db.Model):
 		self.title = title
 		self.content = content
 
-<<<<<<< HEAD
 # chart9
-=======
-# chart7
->>>>>>> 0895ba72d82b30d704b904b486aa478b1faf603e
 class groupComments(db.Model):
 	__tablename__ = "groupComments"
 	cid = db.Column(db.Integer, primary_key = True)
