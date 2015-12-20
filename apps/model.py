@@ -13,6 +13,12 @@ class user(db.Model):
 	email = db.Column(db.String(MAXTEXTLENGTH), unique = True)
 	password = db.Column(db.String(LOWTEXTLENGTH))
 	exp = db.Column(db.Integer)
+	def __init__(self, nickname, userDescription, email, password):
+		self.nickname = nickname
+		self.userDescription = userDescription
+		self.email = email
+		self.password = password
+		self.exp = 0
 
 class group(db.Model):
 	__tablename__ = "group"
