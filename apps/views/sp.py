@@ -4,7 +4,7 @@ from flask import Blueprint, render_template, jsonify,\
                     flash, redirect, session, url_for, request, g
 from flask.ext.login import login_user, logout_user, current_user, login_required
 from apps import db, lm
-from apps.models import User
+from apps.models import *
 
 mod = Blueprint('sp', __name__, url_prefix='/apps/sp')
 
