@@ -130,7 +130,7 @@ class groupComments(db.Model):
 		self.gid = gid
 		self.uid = uid
 		self.content = content
-		self.releasetime = time
+		self.releasetime = int(time.time())
 
 
 '''
