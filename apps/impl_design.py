@@ -138,35 +138,41 @@ def setearnpoint(gid, uid, newearnpoint) :
 	return true | false;
 
 #chart 6
-def createItem(uid, tid) :
+def createItem(gid, cost, itemName, itemDescription) :
 	return fid; -> # Need or not ?
 
-def deleteItem(uid, tid) :
+def deleteItem(tid) :
 	return true | false; -> # Need or not ?
 
-def getCost(gid, tid) :
+def getCost(tid) :
 	return Cost;
 
-def setCost(gid, tid, newCost) :
+def setCost(tid, newCost) :
 	return true | false;
 
-def getItemname(gid, tid) :
+def getItemname(tid) :
 	return Itemname;
 
-def setItemname(gid, tid, newItemname) :
+def setItemname(tid, newItemname) :
 	return true | false;
 
-def getItemdescription(gid, tid) :
+def getItemdescription(tid) :
 	return Itemdescription;
 
-def setItemdescription(gid, tid, newItemdescription) :
+def setItemdescription(tid, newItemdescription) :
 	return true | false;
 
-def getTimes(gid) :
+def getItems(gid) :
 	return items;
+	
+def getTid(gid, itemName) :
+	return tid;
 
 #chart 7
-def createUserItems(gid, uid, tid) :
+def createUserItems(uid, tid) :
+	u = groupUserItems(uid, tid)
+	db.session.add(u)
+	db.commit();
 	return fid;
 
 def deleteUserItems(gid, uid, tid) :

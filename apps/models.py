@@ -1,6 +1,7 @@
 # -*- coding=utf-8 -*-
 
 from apps import db
+import time
 
 LOWTEXTLENGTH = 64;
 MAXTEXTLENGTH = 256;
@@ -110,10 +111,12 @@ class groupInforms(db.Model):
 	gid = db.Column(db.Integer)
 	title = db.Column(db.String(LOWTEXTLENGTH))
 	content = db.Column(db.String(MAXTEXTLENGTH))
+	releasetime = db.Column(db.Interger)
 	def __init__(self, gid, title, content):
 		self.gid = gid
 		self.title = title
 		self.content = content
+		self.releasetime = int(time.time())
 
 # chart9
 class groupComments(db.Model):
@@ -122,12 +125,12 @@ class groupComments(db.Model):
 	gid = db.Column(db.Integer)
 	uid = db.Column(db.Integer)
 	content = db.Column(db.String(MAXTEXTLENGTH))
-	time = db.Column(db.DateTime)
-	def __init__(self, gid, uid, content, time):
+	releasetime = db.Column(db.Interger)
+	def __init__(self, gid, uid, content):
 		self.gid = gid
 		self.uid = uid
 		self.content = content
-		self.time = time
+		self.releasetime = time
 
 
 '''
