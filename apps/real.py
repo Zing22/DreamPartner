@@ -213,7 +213,7 @@ def setItemdescription(tid, newItemdescription) :
 	except Excepption:
 		return False
 
-def getItems(tgid) :
+def getItemsOfGroups(tgid) :
 	try:
 		u = groupItems.query.filter(gid = tgid)
 		ret = []
@@ -224,7 +224,7 @@ def getItems(tgid) :
 		return "I don't know!"
 # return tid
 
-def getTid(tgid, titemName) :
+def getItemsTid(tgid, titemName) :
 	try :
 		u = groupItems.query.filter_by(gid = tgid, itemName = titemName).first()
 		return u.tid
@@ -310,7 +310,7 @@ def deleteGroupInforms(iid) :
 	except Exception :
 		return False
 
-def setGid(iid, tgid) :
+def setInformsGid(iid, tgid) :
 	try :
 		u = groupInforms.query.get(iid).first()
 		u.gid = tgid
@@ -319,14 +319,14 @@ def setGid(iid, tgid) :
 	except Exception :
 		return False
 
-def getGid(iid) :
+def getInformsGid(iid) :
 	try :
 		u = groupInforms.query.get(iid).first()
 		return u.gid
 	except Exception :
 		return "NULL"
 		
-def setTitle(iid, newTitle) :
+def setInformsTitle(iid, newTitle) :
 	try :
 		u = groupInforms.query.get(iid).first()
 		u.title = newTitle
@@ -335,14 +335,14 @@ def setTitle(iid, newTitle) :
 	except Exception :
 		return False
 
-def getTitle(iid) :
+def getInformsTitle(iid) :
 	try :
 		u = groupInforms.query.get(iid).first()
 		return u.title
 	except Exception :
 		return "NULL"
 
-def setContent(iid, newContent) :
+def setInformsContent(iid, newContent) :
 	try :
 		u = groupInforms.query.get(iid).first()
 		u.content = newContent
@@ -351,7 +351,7 @@ def setContent(iid, newContent) :
 	except Exception :
 		return False
 
-def getContent(iid) :
+def getInformsContent(iid) :
 	try :
 		u = groupInforms.query.get(iid).first()
 		return u.content
@@ -419,7 +419,7 @@ def deleteGroupComments(cid) :
 	except Exception :
 		return False
 
-def setContent(cid, newContent) :
+def setCommentsContent(cid, newContent) :
 	try :
 		u = GroupComments.get(cid).first()
 		u.content = newContent
@@ -428,7 +428,7 @@ def setContent(cid, newContent) :
 	except Exception :
 		return False
 
-def getContent(cid) :
+def getCommentsContent(cid) :
 	try :
 		u = GroupComments.get(cid).first()
 		db.session.delete(u)
